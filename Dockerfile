@@ -62,10 +62,6 @@ RUN /AppDir/usr/local/bin/python3.12 -m pip install --no-cache-dir --prefix=/App
 
 ENV PATH=/AppDir/usr/local/bin:$PATH
 
-# COPY ./nvim.appimage /AppDir/usr/bin/nvim.appimage
-# RUN chmod +x /AppDir/usr/bin/nvim.appimage
-# RUN ln -s /AppDir/usr/bin/nvim.appimage /AppDir/usr/bin/nvim 
-
 RUN git clone --depth 1 --branch stable https://github.com/neovim/neovim.git \
     && cd neovim \
     && make CMAKE_BUILD_TYPE=Release \
